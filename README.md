@@ -1,7 +1,7 @@
 # Advanced bash notes
 
 ## Linux is extensionless
-.txt means nothing
+.txt means nothing!
 
 ## Everything is a file
 
@@ -51,7 +51,9 @@ wc < words.txt
 
 #### This is redirecting of STDERR
 ls non_existing_directory 2 > ls_log.txt
+
 the 2 is very important for logging the error.
+
 (if the non_existing_directory doesn't exist, this will send the error to the log file)
 
 ### Piping |
@@ -72,4 +74,10 @@ Running an instance of a program is a process
 - ps aux | grep vagrant sqjed 231 2 >> ps_vagrant_logerror.txt: gets the error (using 2) messages made by this command, appends it to a file
 
 ##### to kill, use kill and pid (process id)
-- kill <pid> (pid = process)
+- kill (pid) (pid = process)
+
+### Variables
+- We can store variables in bash with MY_VAR = ???
+- We can call them with $MY_VAR, e.g. echo $MY_VAR, which will print whatever is stored in your variable to the command line.
+- If the variables are called in a file/script, we cannot access them by running the file in bash, they will be identified as empty when this occurs.
+- We need to export the variables first, then they become persistent enough for us to use. 
